@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Invictus</title>
+    <title>Eluo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     
@@ -11,35 +11,63 @@
     <style>
         /**JUMBOTRON AND GENERAL STYLING**/
         .jumbotron-header {
-            
             background-image: linear-gradient(
-            rgba(0, 0, 0, 0.1),
-            rgba(0, 0, 0, 0.1)
-            ), url("Images/main_background.png");
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0)
+            ), url("Images/main_background.jpg");
         
-            min-height: 600px;
+            min-height: 800px;
 
             background-position: left;
+           
+            
+        }
+        .jumbotron-content {
             display: flex;
             justify-content: center;
             align-items: center;
             
+            /*border: 3px solid black;*/
+            
+            
         }
-        .jumbotron-content {
-            background-color: black;
-            color: white;
-            border: 3px solid black;
-            max-width: 50%;
-            padding: 0 25px 0 20px;
-            font-size: 70px;
+        .j-title {
+            padding: 0 30px 0 35px;
             text-transform:uppercase;
-            font-family: 'Crimson Text', serif;s
-        }
-        
-        .jumbotron-content:hover {
-            transition: 0.5s;
+            font-family: 'Crimson Text', serif;
+            position: absolute;
+
+            top: 230px;
+            left: 330px;
+
+            height: 200px;
+            width: 300px;
+
+            font-size: 80px;
+            z-index: 2;
             background-color: white;
             color: black;
+        }
+        .j-text {
+            padding: 0 30px 0 90px;
+            font-family: 'Homemade Apple', serif;
+            position: relative;
+
+            top: 130px;
+            left: 520px;
+
+            width: 450px;
+            height: 300px;
+
+            font-size:50px;
+            z-index: 1;
+            background-color: #110221;
+            color: white;
+        }
+        .jumbotron-content:hover {
+            transition: 0.5s;
+            background-color: black;
+            color: white;
         }
 
         .overlay-content {
@@ -50,6 +78,10 @@
             max-width: 50%;
             padding: 0 25px 0 20px;
             
+        }
+        .down-arrow {
+            position:relative;
+            top: 300px;
         }
         /**For FAQ Section */
         button {
@@ -78,11 +110,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <?php $filename = 'index.php'?>
-    <?php include 'header.php'; ?>
+    
     <div class = "jumbotron text-center jumbotron-header" > 
-        <br><br><br><br>
-    	<span class = "jumbotron-content">Invictus</span>
-		<br><br>
+    
+        
+        <div class = "jumbotron-content j-text">reinventing self care</div>
+        <div class = "jumbotron-content j-title">Eluo</div>
+    	
+        <img src = "Images/down.png" width = "30" class = "down-arrow img-fluid">
     
        
     </div>
@@ -109,7 +144,7 @@
                         26% of global greenhouse gas emissions are caused by food. 
                     
                     </p>
-                    <p class = "large-paragraph">At <em>Invictus</em>, we're committed to helping our users 
+                    <p class = "large-paragraph">At <em>Eluo</em>, we're committed to helping our users 
                         remain aware of what they're eating and the <b>environmental impact of every bite</b>. Our 
                         application allows users to instantly check the environmental cost of food items.
                         To read more about our mission and how we're increasing sustainability, scroll down below.
@@ -157,12 +192,12 @@
 
         <p class = "large-paragraph">
         The origin of our name: separately, "In Victus" means "In Food" in Latin. 
-        But put together, Invictus means Invincible. We believe our product will 
+        But put together, Eluo means Invincible. We believe our product will 
         revolutionize the way people eat. The first stage is to launch it as a 
         web application. 
         </p>
         <p class = "large-paragraph">
-        Our approach is two-sided. First, we're actively raising awareness. Invictus
+        Our approach is two-sided. First, we're actively raising awareness. Eluo
          allows users to instantly understand whether a food item is sustainable 
          for the environment based on a variety of factors.  Second, we're creating long-term habits.
          Through a simple but effective interface, users gain knowledge of the 
@@ -200,11 +235,11 @@
                     <div class="card bg-light">
                         <div class="card-header" id="accordion-tab-1-heading-2">
                             <button class="btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-2" aria-expanded="false" aria-controls="accordion-tab-1-content-2">
-                            Q: What does Invictus mean? </button>
+                            Q: What does Eluo mean? </button>
                         </div>
                         <div class="collapse" id="accordion-tab-1-content-2" aria-labelledby="accordion-tab-1-heading-2" data-parent="#accordion-tab-1">
                             <div class="card-body">
-                            <p>Separately, "In Victus" means "In Food" in Latin. But put together, Invictus means Invincible. </p>
+                            <p>Separately, "In Victus" means "In Food" in Latin. But put together, Eluo means Invincible. </p>
                             </div>
                         </div>
                     </div>
@@ -212,7 +247,7 @@
                         <div class="card-header" id="accordion-tab-1-heading-3">
                             
                                 <button class="btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-3" aria-expanded="false" aria-controls="accordion-tab-1-content-3">
-                                    Q: How can I use the image processing aspect of Invictus? </button>
+                                    Q: How can I use the image processing aspect of Eluo? </button>
                             
                         </div>
                         <div class="collapse" id="accordion-tab-1-content-3" aria-labelledby="accordion-tab-1-heading-3" data-parent="#accordion-tab-1">
