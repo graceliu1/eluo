@@ -1,6 +1,6 @@
 /***HTML TAG CSS**/
 * {
-    border-radius: 0 !important;
+    border-radius: 30px !important;
 }
 h5, h4, h3, h2, h1, .card-img-overlay{
     font-family: 'Barlow', sans-serif;
