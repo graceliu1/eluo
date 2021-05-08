@@ -51,17 +51,17 @@
         .j-text {
             padding: 0 30px 0 90px;
             font-family: 'Homemade Apple', serif;
-            position: relative;
+            position: absolute;
 
-            top: 130px;
-            left: 520px;
+            top: 190px;
+            left: 560px;
 
             width: 450px;
             height: 300px;
 
             font-size:50px;
             z-index: 1;
-            background-color: #110221;
+            background-color: black;
             color: white;
         }
         .jumbotron-content:hover {
@@ -70,10 +70,26 @@
             color: white;
         }
 
-        .overlay-content {
-            background-color: #C88092;
-            
+
+        .image-card {
+            border-radius: 30px;
+            min-height: 600px;
+            background-image: linear-gradient(
+                    rgba(0, 0, 0, 0),
+                    rgba(0, 0, 0, 0)
+                    ), url("Images/blue-powder.jpg");
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+          
+            background-size: cover;
+            justify-content: center;
+            align-items: center;
             overflow: hidden;
+        }
+        .overlay-content {
+            background-color: #F4F2C9;
+            color: black;
             
             max-width: 50%;
             padding: 0 25px 0 20px;
@@ -91,11 +107,11 @@
         /*****************/
 
         /**CARD STYLES CSS**/
-            .card-style1 { background-color: #D9A404; } /*YELLOW*/
-            .card-style2 { background-color: #BF1515; color: white; } /*DARK RED*/
-            .card-style3 { background-color: #A9BF04; color: white;} /*LIGHT GREEN */
-            .card-style4 { background-color: #E39F55; } /*ORANGE*/
-        
+            .card-dark-gold{ background-color: #CA9703; } 
+            .card-light-gold { background-color: #D5AD36; color: white; } 
+            .card-cream { background-color: #F4F2C9; color: white;} /*LIGHT GREEN */
+            .card-light-blue { background-color: #4488BF; color: white; } /*ORANGE*/
+            .card-dark-blue { background-color: #265999; color: white;} /*ORANGE*/
 
         
     </style> 
@@ -111,13 +127,35 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <?php $filename = 'index.php'?>
     
-    <div class = "jumbotron text-center jumbotron-header" > 
-    
+    <div class = "jumbotron text-center jumbotron-header"style ="padding-top:20px;" > 
+    <nav class="navbar navbar-expand-md" style ="padding-top:0px;">
+          <div class="mx-auto d-block flex-wrap">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Home</a>
+                </li>
+                
+                <li class="nav-item ">
+                  <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact Us</a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+      </nav>
         
         <div class = "jumbotron-content j-text">reinventing self care</div>
         <div class = "jumbotron-content j-title">Eluo</div>
     	
-        <img src = "Images/down.png" width = "30" class = "down-arrow img-fluid">
+        <img src = "Images/down-arrow.png" width = "30" class = "down-arrow img-fluid">
     
        
     </div>
@@ -126,7 +164,7 @@
 
     <!--INTRODUCTION-->
     <div class = "card-deck">
-        <div data-aos="fade-right" data-aos-duration="1000" class = "card container card-style1" style = "color: white"> 
+        <div data-aos="fade-right" data-aos-duration="1000" class = "card container card-light-gold" style = "color: white"> 
 
             <div class = "">
                 <div class = "card-body">
@@ -155,13 +193,13 @@
             </div>
         </div>
         <div data-aos="fade-left" data-aos-duration="1000" class = "col-md-6" style = "color: white">
-            <img src ="Images/main_1.png" class = "img-thumbnail">
+            <img src ="Images/blue-makeup.jpg" class = "img-thumbnail">
         </div>
     </div>
-    <br>
-
-    <!--FORM SECTION BELOW-->
-    <div data-aos="fade-right" data-aos-duration="1000" class = "card container card-style2">
+    
+    <br><br><br>
+    <!--PURPOSE-->
+    <div data-aos="fade-right" data-aos-duration="1000" class = "card container card-light-blue">
         
         <div class = "card-body">
             <div class = "card-title">
@@ -178,42 +216,42 @@
         <br>
         <br>
     </div>
-    <br>
-
     
-    <!--IMAGE CARD BELOW-->
-    <div data-aos="fade-left" data-aos-duration="1000" class = "card container card-style4 image-card" style = "color: white"> 
+
+    <br><br><br>
+    <!--IMAGE CARD-->
+    <div data-aos="fade-left" data-aos-duration="1000" class = "card container card-cream image-card"> 
         
         <div class = "card-body card-img-overlay overlay-content" style = "padding-left: 30px;"> 
-        <br>
-        <div class = "card-title">
-        The solution
-        </div>
+            <br>
+            <div class = "card-title">
+            The solution
+            </div>
 
-        <p class = "large-paragraph">
-        The origin of our name: separately, "In Victus" means "In Food" in Latin. 
-        But put together, Eluo means Invincible. We believe our product will 
-        revolutionize the way people eat. The first stage is to launch it as a 
-        web application. 
-        </p>
-        <p class = "large-paragraph">
-        Our approach is two-sided. First, we're actively raising awareness. Eluo
-         allows users to instantly understand whether a food item is sustainable 
-         for the environment based on a variety of factors.  Second, we're creating long-term habits.
-         Through a simple but effective interface, users gain knowledge of the 
-         impact of their food habits on the environment. This motivates them 
-         to seek new, healthier alternatives that are more beneficial to everyone. 
-        </p>
+            <p class = "large-paragraph">
+            The origin of our name: separately, "In Victus" means "In Food" in Latin. 
+            But put together, Eluo means Invincible. We believe our product will 
+            revolutionize the way people eat. The first stage is to launch it as a 
+            web application. 
+            </p>
+            <p class = "large-paragraph">
+            Our approach is two-sided. First, we're actively raising awareness. Eluo
+            allows users to instantly understand whether a food item is sustainable 
+            for the environment based on a variety of factors.  Second, we're creating long-term habits.
+            Through a simple but effective interface, users gain knowledge of the 
+            impact of their food habits on the environment. This motivates them 
+            to seek new, healthier alternatives that are more beneficial to everyone. 
+            </p>
         </div> 
     </div>
-    <br>
-
-    <!--FAQ SECTION IS BELOW-->
+    
+    <br><br><br>
+    <!--FAQ SECTION-->
     <div  class = "card-deck" >
         <div data-aos="fade-right" data-aos-duration="1000"  class = "col-md-5" style = "color: white">
-            <img src ="Images/main_2.jpg" class = "img-thumbnail">
+            <img src ="Images/blue-skincare.jpg" class = "img-thumbnail">
         </div>
-        <div data-aos="fade-left" data-aos-duration="1000" class = "card container col-md- card-style3"> 
+        <div data-aos="fade-left" data-aos-duration="1000" class = "card container col-md- card-dark-blue"> 
             
             <div class = "card-body">
                 <div class = "card-title">
@@ -287,10 +325,12 @@
                 </div>
             </div>
             </div>
-        </div>
+    </div>
     
-    <br>
-
+    
+    <br><br><br>
+    
+    
     <!--CONTACT FORM BELOW
     <div data-aos="fade-in" data-aos-duration="1000" class = "card card-style4" style = "color: white"> 
         <div class = "card-header">
@@ -342,10 +382,6 @@
         </div>
     </div>
     -->
-    <br>
-    
-
-    <br>
     </div> <!--END OF THE CONTAINER-->
     
     <!----------- Footer ------------>

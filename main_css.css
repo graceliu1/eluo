@@ -1,6 +1,6 @@
 /***HTML TAG CSS**/
-* {
-    border-radius: 30px !important;
+.card, .img-thumbnail, .jumbotron-content {
+    border-radius: 30px;
 }
 h5, h4, h3, h2, h1, .card-img-overlay{
     font-family: 'Barlow', sans-serif;
@@ -17,20 +17,9 @@ p {
 }
 .card, .img-thumbnail {
     border: 0;
+   
 }
-.image-card {
-    min-height: 600px;
-    background-image: linear-gradient(
-            rgba(0, 0, 0, 0),
-            rgba(0, 0, 0, 0)
-            ), url("Images/main_image_cardoverlay.jpg");
-    background-attachment: fixed;
-    background-position: right;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 .card-header {
     border-bottom: 0;
     background-color: inherit;
@@ -54,9 +43,11 @@ p {
      background-repeat: no-repeat;
      background-size: cover;
 }
+
+/******THIS IS  USED  FOR  FOOOOOOOOOOOOOTERRRRRRR*/
 .jumbotron {
     border-radius: 0 !important;
-    background-color: #F1DFBC;
+    background-color: #4488BF;
     
 }
 .large-paragraph {
@@ -66,44 +57,14 @@ p {
     background-color: #1F283D;
 }
 /***************************/
-
-/**NAVBAR STYLING SECTION**/
+/*****NAVBAR  STYLE****/
 .nav-link {
-    font-family: 'Barlow', sans-serif;
-    font-size: 120%;
-    text-decoration: none;
-    /*font-family: 'Lato', sans-serif; /*font-family: 'IBM Plex Sans', sans-serif;*/
+    text-transform: uppercase;
+    color: #265999;
+    font-weight: bold;
 }
-.navbar a.active {
-    border-bottom: 3px solid black;
-}
-/*
-.navbar-custom {
-    background-color: transparent;
-    color: white;
-}*/ 
-.navbar-brand {
-    font-family: 'Crimson Text', serif;
-    font-size: 150%;
-}
-#logo {
-    vertical-align:middle;
-}
-.navbar-brand span {
-    font-size:2rem;
-    line-height:1.2;
-    font-weight: 200;
-    display:inline-block;
-    vertical-align:middle;
-    padding:0 0 0 15px;
-}
-.navbar-brand b {
-    display:block;
-    font-size:50%;
-    line-height:1;
-}
-.navbar-nav {
-    margin-left: auto;
+.nav-link:hover {
+    border-bottom: 3px solid white;
 }
 /**************************/
 /****FOOTER CODE***/
