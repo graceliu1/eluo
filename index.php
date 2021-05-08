@@ -128,32 +128,10 @@
     <?php $filename = 'index.php'?>
     
     <div class = "jumbotron text-center jumbotron-header"style ="padding-top:20px;" > 
-    <nav class="navbar navbar-expand-md" style ="padding-top:0px;">
-          <div class="mx-auto d-block flex-wrap">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav">
+    <?php include 'header.php'?>
 
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Home</a>
-                </li>
-                
-                <li class="nav-item ">
-                  <a class="nav-link" href="#">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Contact Us</a>
-                </li>
-
-              </ul>
-            </div>
-          </div>
-      </nav>
-        
-        <div class = "jumbotron-content j-text">reinventing self care</div>
-        <div class = "jumbotron-content j-title">Eluo</div>
+    <div class = "shadow-lg jumbotron-content j-text">reinventing self care</div>
+        <div class = "shadow-lg jumbotron-content j-title">Eluo</div>
     	
         <img src = "Images/down-arrow.png" width = "30" class = "down-arrow img-fluid">
     
@@ -163,8 +141,8 @@
     <div class = "container">
 
     <!--INTRODUCTION-->
-    <div class = "card-deck">
-        <div data-aos="fade-right" data-aos-duration="1000" class = "card container card-light-gold" style = "color: white"> 
+    <div  data-aos="fade-left" data-aos-duration="1000"  class = "card-deck">
+        <div class = "card container card-light-gold" style = "color: white"> 
 
             <div class = "">
                 <div class = "card-body">
@@ -192,7 +170,7 @@
                 </div>
             </div>
         </div>
-        <div data-aos="fade-left" data-aos-duration="1000" class = "col-md-6" style = "color: white">
+        <div class = "col-md-6" style = "color: white">
             <img src ="Images/blue-makeup.jpg" class = "img-thumbnail">
         </div>
     </div>
@@ -247,11 +225,11 @@
     
     <br><br><br>
     <!--FAQ SECTION-->
-    <div  class = "card-deck" >
-        <div data-aos="fade-right" data-aos-duration="1000"  class = "col-md-5" style = "color: white">
+    <div data-aos="fade-left" data-aos-duration="1000" class = "card-deck" >
+        <div  class = "col-md-5" style = "color: white">
             <img src ="Images/blue-skincare.jpg" class = "img-thumbnail">
         </div>
-        <div data-aos="fade-left" data-aos-duration="1000" class = "card container col-md- card-dark-blue"> 
+        <div  class = "card container col-md- card-dark-blue"> 
             
             <div class = "card-body">
                 <div class = "card-title">

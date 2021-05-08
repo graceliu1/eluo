@@ -2,16 +2,16 @@
         <div class="container">
             <div class = "row">
             <div class="col-md-5 footer-brand">
-            <a href="#"> <img id="logo" alt="Logo" src="Images/LargeLogo.png" width="60" height="60"> <span style ="max-width: 70%; font-family: 'Crimson Text', serif; font-size: 170%">Invictus</span> </a> 
+            <a href="#"> <img id="logo" alt="Logo" src="Images/eluo-logo.png" width="60" height="60"> <span style ="max-width: 70%; font-family: 'Crimson Text', serif; font-size: 170%">Eluo</span> </a> 
             
-                <p>Invictus is an organization committed to helping consumers
+                <p>Eluo is an organization committed to helping consumers
                     remain aware of what they're eating and the environmental impact
                      of every bite. Our application allows users to instantly check 
                      the environmental cost of food items. To read more about our
                       mission and how we're increasing sustainability, visit the rest 
                       of our website.
                 </p>
-                <p>Invictus, all rights reserved</p>
+                <p>Eluo, all rights reserved</p>
             </div>
             
             <ul class="social list-inline col-md-3">
@@ -36,5 +36,7 @@
             </div>
                    
             </div>
-            <div class = "text-center"><h5><a style = "font-family: 'Crimson Text', serif; text-decoration: none" href= "#">Website and application created by Grace Liu & Ria Jain © 2021 </a> </h5></div>
+            <div class = "text-center">
+                <h5><a style = "font-family: 'Crimson Text', serif; text-decoration: none" href= "#">
+                Copyright © 2021 by Eluo </a> </h5></div>
     </footer>

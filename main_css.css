@@ -63,6 +63,9 @@ p {
     color: #265999;
     font-weight: bold;
 }
+.active {
+    border-bottom: 3px solid white;
+}
 .nav-link:hover {
     border-bottom: 3px solid white;
 }
