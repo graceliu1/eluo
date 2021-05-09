@@ -16,7 +16,7 @@ def ocr_core(filename):
     os.chdir('../nlp')
     os.system('javac Finder.java')
     os.system('java Finder')
-    os.chdir('../ocr_server') 
+    os.chdir('../ocr_serv2er') 
     file = open("ingredients-corrected.txt", "r")
     lines = file.readlines()
     if (len(lines) == 0):

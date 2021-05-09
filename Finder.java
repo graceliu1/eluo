@@ -9,7 +9,7 @@ public class Finder
         ArrayList<String> ingredients = r.correctIngredients();
         ArrayList<String> badIngredients = new ArrayList<>();
         try {
-            File textFile = new File("../nlp/chemicals-bad.txt");
+            File textFile = new File("chemicals-bad.txt");
             Scanner sc = new Scanner(textFile);
             while (sc.hasNextLine())
             {
@@ -27,7 +27,7 @@ public class Finder
             if(badIngredients.contains(i)) finalWords += i + "\n";
         }
         try {
-            BufferedWriter out = new BufferedWriter(new FileWriter("../ocr_server/ingredients-bad.txt"));
+            BufferedWriter out = new BufferedWriter(new FileWriter("ingredients-bad.txt"));
             out.write(finalWords);
             out.close();
         }
