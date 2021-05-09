@@ -132,7 +132,7 @@ public class Reader
         POSModel model = new POSModel(input); 
         POSTaggerME tagger = new POSTaggerME(model); 
         String[] tags = tagger.tag(tokens);
-        return tags;
+        return tags;  
     }
 
     public static String[] lemmatize(String[] tokens, String[] posTags) throws Exception
