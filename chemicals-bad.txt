@@ -1,0 +1,7 @@
+sodium-lauryl-sulfate	sodium lauryl sulfate
+sodium-laureth-sulfate		sodium laureth sulfate
+ammonium-lauryl-sulfate	ammonium lauryl sulfate
+propanol	propanol
+isopropyl-alcohol	isopropyl alcohol
+benzene	benzene
+phenylmethane-phenylmethane
