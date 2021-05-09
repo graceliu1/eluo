@@ -129,7 +129,9 @@
       button {
           all: unset;
       }
-
+      [type=submit],[type=file]input {
+        all: unset;
+      }
       /*****************/
 
       /**CARD STYLES CSS**/
@@ -198,10 +200,33 @@
               <input type=submit value=Upload>
         </form>
         <br><br>
+
+        <h3>Select your personal product type:</h3>
+
+        <form id = "productType" onsubmit='getScore()'>
+        <input type="radio" id="shampoo" name="product" value="shampoo">
+        <label for="shampoo">Shampoo</label><br>
+        <input type="radio" id="conditioner" name="product" value="conditioner">
+        <label for="conditioner">Conditioner</label><br>
+        <input type="radio" id="foundation" name="product" value="foundation">
+        <label for="foundation">Foundation</label>
+        <br>
+        <input type="submit" name="mysubmit" value="Submit"/>
+        </form>
+        <script>
+           
+           function getScore(){
+                // Get the selected score (assuming one was selected)
+                var score = document.querySelector('input[name="product"]:checked').value;
+                alert(score + ' was selected!');
+            }
+        </script>
+
         <h1>Result:</h1>
+        <!--
         {% if img_src %}
           <img src="{{ img_src }}">
-        {% endif %}
+        {% endif %}-->
         
         {% if extracted_text %}
           <p> The extracted text from the image above is: <b> {{ extracted_text }} </b></p>
