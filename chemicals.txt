@@ -1,0 +1,18 @@
+sodium lauryl sulfate	sodium lauryl sulfate
+sodium laureth sulfate		sodium laureth sulfate
+ammonium lauryl sulfate	ammonium lauryl sulfate
+propanol	propanol
+isopropyl alcohol	isopropyl alcohol
+benzene	benzene
+phenylmethane	phenylmethane
+toluol	toluol
+methylbenzene	methylbenzene
+polyethylene glycol	polyethylene glycol
+propanol	propanol
+isopropyl alcohol	isopropyl alcohol
+benzene	benzene
+phenylmethane	phenylmethane
+methylbenzene	methylbenzene
+oxybenzone	oxybenzone
+formaldehyde	formaldehyde
+octinoxate	octinoxate
