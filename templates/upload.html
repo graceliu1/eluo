@@ -129,8 +129,11 @@
       button {
           all: unset;
       }
-      [type=submit],[type=file]input {
+      [type=submit],[type=file] {
         all: unset;
+        border: 3px solid black; 
+        color: black;
+        background-color: white;
       }
       /*****************/
 
@@ -195,7 +198,7 @@
         
         <h1>Upload </h1>
         
-        <form method=post enctype=multipart/form-data>
+        <form method=post enctype=multipart/form-data onsubmit = 'quickAlert()'>
           <p><input type=file name=file>
               <input type=submit value=Upload>
         </form>
@@ -219,6 +222,9 @@
                 // Get the selected score (assuming one was selected)
                 var score = document.querySelector('input[name="product"]:checked').value;
                 alert(score + ' was selected!');
+            }
+            function quickAlert() {
+              alert('Upload successful...ingredients are processing!');
             }
         </script>
 
