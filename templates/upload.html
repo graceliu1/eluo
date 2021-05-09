@@ -2,280 +2,50 @@
 <html>
  <head>
    <title>Upload Image</title>
-   <!--HEAD INFORMATION--------------------------------------------------------->
-    <!--Favicon link-->
-    <link rel="icon" href="static/Images/eluo-logo.png">
-
-    <!--Imported Bootstrap styles-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <!--Link to all fonts-->
-    <link rel="preconnect" href="https://fonts.gstatic.com"> 
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Homemade+Apple&family=Lovers+Quarrel&family=Lato&family=Antic+Slab&family=Sacramento&family=Titillium+Web:wght@600&family=Crimson+Text&family=Poppins&family=Cedarville+Cursive&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Barlow&display=swap" rel="stylesheet">
-
-    <!--Icons-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
-    <!--Link to main stylesheet-->
-    <link type="text/css"  href="static/main.css" rel="stylesheet">
-    
-    <!----------------------------------------------------------->
-    <style>
-      /**JUMBOTRON AND GENERAL STYLING**/
-      .jumbotron-header {
-          background-image: linear-gradient(
-          rgba(0, 0, 0, 0),
-          rgba(0, 0, 0, 0)
-          ), url("static/Images/main_background.jpg");
-      
-          min-height: 800px;
-
-          background-position: left;
-         
-          
-      }
-      .j-title {
-          padding: 40px 30px 0 35px;
-          text-transform:uppercase;
-          font-family: 'Crimson Text', serif;
-          position: absolute;
-
-          top: 230px;
-          left: 330px;
-
-          height: 200px;
-          width: 300px;
-
-          font-size: 80px;
-          z-index: 2;
-          background-color: white;
-          color: black;
-         
-      }
-      .j-text {
-          padding: 50px 30px 0 90px;
-          
-          position: absolute;
-
-          top: 190px;
-          left: 560px;
-
-          width: 450px;
-          height: 300px;
-
-          
-          z-index: 1;
-          background-color: #265999;
-          color: white;
-      }
-      .j-text-info {
-          font-family: 'Homemade Apple', serif;
-          font-size:40px;
-      }
-      .j-text:hover {
-          transition: 0.5s;
-          background-color: black;
-          color: white;
-      }
-      .j-title:hover {
-          transition: 0.5s;
-          background-image: linear-gradient(
-                  rgba(0, 0, 0, 0),
-                  rgba(0, 0, 0, 0)
-                  ), url("static/Images/larger-logo.png");
-          background-size: 110%;
-          background-position: center;
-
-
-      }
-      .margin-up {
-          margin-top: 3px;
-      }
-
-
-      /*
-      .image-card {
-          border-radius: 30px;
-          min-height: 600px;
-          background-image: linear-gradient(
-                  rgba(0, 0, 0, 0),
-                  rgba(0, 0, 0, 0)
-                  ), url("static/Images/blue-powder.jpg");
-          background-attachment: fixed;
-          background-position: center;
-          background-repeat: no-repeat;
-        
-          background-size: cover;
-          justify-content: center;
-          align-items: center;
-          overflow: hidden;
-      }
-      .overlay-content {
-          background-color: #F4F2C9;
-          color: black;
-          
-          max-width: 50%;
-          padding: 0 25px 0 20px;
-          
-      }*/
-      .down-arrow {
-          position:relative;
-          top: 600px;
-      }
-      /**For FAQ Section */
-      button {
-          all: unset;
-      }
-      [type=submit],[type=file]input {
-        all: unset;
-      }
-      /*****************/
-
-      /**CARD STYLES CSS**/
-          .card-dark-gold{ background-color: #CA9703; } 
-          .card-light-gold { background-color: #D5AD36; color: white; } 
-          .card-lighter-gold { background-color: #e7c86b; color: white; } 
-          .card-cream { background-color: #F4F2C9; color: black;} /*LIGHT GREEN */
-          .card-light-blue { background-color: #4488BF; color: white; } /*ORANGE*/
-          .card-dark-blue { background-color: #265999; color: white;} /*ORANGE*/
-
-      
-  </style> 
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
  </head>
  <body>
-   
-  <div class = "jumbotron text-center jumbotron-header"style ="padding-top:20px; margin-bottom:3px;" > 
-  <!--<?php include 'header.php'?>-->
-  <nav class="navbar navbar-expand-md" style ="padding-top:0px;">
-      <div class="mx-auto d-block flex-wrap">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav">
 
-            <li class="nav-item">
-              <a class="nav-link" href="../">Home</a>
-            </li>
-            
-            <li class="nav-item ">
-              <a class="nav-link active" href="upload" >Use</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact Us</a>
-            </li>
-
-          </ul>
-        </div>
-      </div>
-  </nav>
-    
-
-  <div class = "shadow-lg jumbotron-content j-text">
-      <span class = "j-text-info">check product safety </span><br>
-      <a href="../" style = "margin-top: 30px" class="btn btn-lg btn-outline-light">home</a>
-  </div>
-      <div class = "shadow-lg jumbotron-content j-title">Use</div>
-      
-      <img src = "static/Images/down-arrow.png" width = "40" class = "down-arrow img-fluid">
+   {% if msg %}
+   <h1>{{ msg }}</h1>
+   {% endif %}
   
- 
-  </div>
+   <h1>Upload new File</h1>
+  
+   <form method=post enctype=multipart/form-data>
+     <p><input type=file name=file>
+        <input type=submit value=Upload>
+   </form>
 
-  <div class = "container">
-    
-    <div class = "card card-lighter-gold margin-up">
-      <div class = "card-body">
-        {% if msg %}
-        <p class ="alert alert-light">{{ msg }}</p>
-        {% endif %}
-        
-        <h1>Upload </h1>
-        
-        <form method=post enctype=multipart/form-data>
-          <p><input type=file name=file>
-              <input type=submit value=Upload>
-        </form>
-        <br><br>
+   <!--{% for mesg in get_flashed_messages() %}
+      <h1>{{ mesg }}</h1>
+   {% endfor %}-->
 
-        <h3>Select your personal product type:</h3>
-
-        <form id = "productType" onsubmit='getScore()'>
-        <input type="radio" id="shampoo" name="product" value="shampoo">
-        <label for="shampoo">Shampoo</label><br>
-        <input type="radio" id="conditioner" name="product" value="conditioner">
-        <label for="conditioner">Conditioner</label><br>
-        <input type="radio" id="foundation" name="product" value="foundation">
-        <label for="foundation">Foundation</label>
-        <br>
-        <input type="submit" name="mysubmit" value="Submit"/>
-        </form>
-        <script>
-           
-           function getScore(){
-                // Get the selected score (assuming one was selected)
-                var score = document.querySelector('input[name="product"]:checked').value;
-                alert(score + ' was selected!');
-            }
-        </script>
-
-        <h1>Result:</h1>
-        <!--
-        {% if img_src %}
-          <img src="{{ img_src }}">
-        {% endif %}-->
-        
-        {% if extracted_text %}
-          <p> The extracted text from the image above is: <b> {{ extracted_text }} </b></p>
-        
-        {% else %}
-          The extracted text will be displayed here: 
-        {% endif %}
-        <br><br>
-        <a href="../" class="btn btn-lg btn-dark">Return</a>
-      </div>
+   <!--{% block content %}
+<div class="container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ message }}
     </div>
-  </div>
+    {% endfor %}
 
-  <footer class="jumbotron footer-bs margin-up">
-    <div class="container">
-        <div class = "row">
-        <div class="col-md-3 footer-nav">
-            <h4>Menu —</h4>
-                <ul class="pages">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-        </div>
-        <div class="col-md-5 footer-brand">
-        <a href="#"> <img id="logo" alt="Logo" src="static/Images/eluo-logo.png" width="60" height="60"> <span style ="max-width: 70%; font-family: 'Crimson Text', serif; font-size: 170%">Eluo</span> </a> 
-        
-            <p>Eluo is an organization committed to helping consumers
-                remain aware of what they're eating and the environmental impact
-                 of every bite. 
-            </p>
-            <p>Eluo, all rights reserved</p>
-        </div>
-        
-        <ul class="social list-inline col-md-3">
-                
-            <li class="list-inline-item"><a href="mailto:dhsgirlsmatha@gmail.com" class="social-link"><i class="fas fa-envelope fa-2x"></i></a></li>
-            <!--<li class="list-inline-item"><a href="https://www.instagram.com/dhs.girlsmathassociation/" class="social-link"><i class="fab fa-instagram fa-3x"></i></a></li>-->
-            <li class="list-inline-item"><a href="https://discord.com/invite/tzZBVA8y" class="social-link"><i class="fab fa-linkedin fa-2x"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fas fa-share fa-2x"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fas fa-share fa-2x"></i></a></li>
-            
-        </ul>
-        
-               
-        </div>
-        <div class = "text-center">
-            <h5><a style = "font-family: 'Crimson Text', serif; text-decoration: none" href= "#">
-            Copyright © 2021 by Eluo </a> </h5></div>
-</footer>
+    {% block page_content %}{% endblock %}
+</div>
+{% endblock %}-->
+
+   
+
+   <h1>Result:</h1>
+   {% if img_src %}
+     <img src="{{ img_src }}">
+   {% endif %}
+  
+   {% if extracted_text %}
+     <p> Here are the results: <b> {{ extracted_text }} </b></p>
+  
+   {% else %}
+     The results will be displayed here.
+   {% endif %}
  </body>
 </html>
