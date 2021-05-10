@@ -5,12 +5,13 @@
    <!--HEAD INFORMATION--------------------------------------------------------->
     <!--Favicon link-->
     <link rel="icon" href="static/Images/eluo-logo.png">
-
     <!--Imported Bootstrap styles-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!--Link to all fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Homemade+Apple&family=Lovers+Quarrel&family=Lato&family=Antic+Slab&family=Sacramento&family=Titillium+Web:wght@600&family=Crimson+Text&family=Poppins&family=Cedarville+Cursive&display=swap" rel="stylesheet">
@@ -94,47 +95,58 @@
       .margin-up {
           margin-top: 3px;
       }
-
-
-      /*
-      .image-card {
-          border-radius: 30px;
-          min-height: 600px;
-          background-image: linear-gradient(
-                  rgba(0, 0, 0, 0),
-                  rgba(0, 0, 0, 0)
-                  ), url("static/Images/blue-powder.jpg");
-          background-attachment: fixed;
-          background-position: center;
-          background-repeat: no-repeat;
-        
-          background-size: cover;
-          justify-content: center;
-          align-items: center;
-          overflow: hidden;
+      .section-title {
+          margin-bottom: 20px;
       }
-      .overlay-content {
-          background-color: #F4F2C9;
-          color: black;
-          
-          max-width: 50%;
-          padding: 0 25px 0 20px;
-          
-      }*/
       .down-arrow {
           position:relative;
           top: 600px;
       }
-      /**For FAQ Section */
-      button {
-          all: unset;
-      }
-      [type=submit],[type=file] {
+      
+      input[type=submit] {
         all: unset;
         border: 2px solid black; 
         padding: 5px 10px 5px 10px;
         color: black;
-        background-color: white;
+        background-color: rgb(255, 255, 255);
+      }
+
+      input[type="file"] {
+          display: none;
+      }
+      .custom-file-upload {
+          all:unset;
+          border: 2px solid black; 
+          color: black;
+          background-color: rgb(231, 231, 231);
+          display: inline-block;
+
+          padding: 5px 10px 5px 10px;
+          cursor: pointer;
+      }
+      #file-chosen{
+        margin-left: 0.3rem;
+        font-family: sans-serif;
+      }
+      .nav-item, .nav-item:hover {
+        border: 0;
+      }
+      .nav-tabs, .card-header-tabs {
+        border: 2px;
+        
+      }
+      .nav-tabs .active {
+        background-color: white !important;
+        border-color: black;
+      }
+      .nav-link {
+        color: black;
+      }
+      .nav-link:hover {
+        color: rgb(13, 12, 12);
+      }
+      .card-header {
+        background-color:#4488BF ;
       }
       /*****************/
 
@@ -142,7 +154,7 @@
           .card-dark-gold{ background-color: #CA9703; } 
           .card-light-gold { background-color: #D5AD36; color: white; } 
           .card-lighter-gold { background-color: #e7c86b; color: white; } 
-          .card-cream { background-color: #F4F2C9; color: black;} /*LIGHT GREEN */
+          .card-cream { background-color: #c3d8fb; color: black;} /*LIGHT GREEN */
           .card-light-blue { background-color: #4488BF; color: white; } /*ORANGE*/
           .card-dark-blue { background-color: #265999; color: white;} /*ORANGE*/
 
@@ -189,63 +201,232 @@
  
   </div>
 
+
+
+<!--############################################################################-->
+<div class="container">
+  
+  <div class="row">
+    <div class="col-sm-12">
+     <div class="card" >
+       <!-- navigation in .card-header -->
+       <div class="card-header">
+         <ul class="nav nav-tabs card-header-tabs">
+           <li class="nav-item">
+             <a class="nav-link active" data-toggle="tab" href="#tab1">Check Safety</a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link" data-toggle="tab" href="#tab2">Product Recommendations</a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link" data-toggle="tab" href="#tab3">Learn More</a>
+           </li>
+         </ul>
+       </div>
+       <!-- .card-body.tab-content  -->
+       <div class = "container">
+        <div class="card-body tab-content">
+         <div class="tab-pane fade show active" id="tab1">
+           
+            <h1 class = "section-title">Upload </h1>
+            
+            <div class = "alert alert-dark"><b>Instructions:</b> Please upload a picture of the ingredients label from your personal product of choice. 
+              Images must be in JPG, JPEG, or PNG format.</div>
+
+            <form method=post enctype=multipart/form-data onsubmit = 'quickAlert()'>
+
+              <label class="custom-file-upload">
+                    <input id = "actual-btn" type="file" name = "file">
+                    Custom Upload
+              </label>
+              <!-- name of file chosen -->
+              <span id="file-chosen">No file chosen</span>
+              <br><br>         
+              <input type="submit" value="Submit">
+            </form>
+
+            <script>
+              const actualBtn = document.getElementById('actual-btn');
+
+            const fileChosen = document.getElementById('file-chosen');
+
+            actualBtn.addEventListener('change', function(){
+              fileChosen.textContent = this.files[0].name
+            })
+            </script>
+            
+            <br><hr>
+            <h1 class = "section-title">Result:</h1>
+            <!--
+            {% if img_src %}
+              <img src="{{ img_src }}">
+            {% endif %}-->
+            
+            {% if extracted_text %}
+              <p> The extracted text from the image above is: <b> {{ extracted_text }} </b></p>
+            
+            {% else %}
+              Your results will be displayed here: 
+              <!--The extracted text will be displayed here: -->
+            {% endif %}
+            <br><br>
+
+            <a href="../" class="btn btn-lg btn-dark">Return</a>
+            <br><br>
+            {% if msg %}
+            <p class ="alert alert-success">{{ msg }}</p>
+            {% endif %}
+         </div>
+
+         <div class="tab-pane fade" id="tab2">
+          <!--############################################################################-->
+          <h1 class = "section-title">Product Recommendations</h1>
+
+          <form id = "productType" onsubmit='getScore()'>
+            <input type="radio" id="shampoo" name="product" value="shampoo">
+            <label for="shampoo">Shampoo</label><br>
+            <input type="radio" id="conditioner" name="product" value="conditioner">
+            <label for="conditioner">Conditioner</label><br>
+            <input type="radio" id="foundation" name="product" value="foundation">
+            <label for="foundation">Foundation</label>
+            <br><br>
+            <input type="submit" name="mysubmit" value="Submit"/>
+          </form>
+
+          <script>
+            function getScore(){
+                  // Get the selected score (assuming one was selected)
+                  var score = document.querySelector('input[name="product"]:checked').value;
+                  alert(score + ' was selected!');
+              }
+              function quickAlert() {
+                alert('Your upload was successful. Please be patient, results may take a few minutes to process!');
+              }
+          </script>
+         </div>
+
+         <div class="tab-pane fade" id="tab3">
+           <h4 class="card-title">Tab 3 Title</h4>
+           <p class="card-text">Never say Never. Dont't warry, be happy</p>
+           <a href="#" class="btn btn-success">Read More 3</a>
+         </div>
+        </div><!--/.card-body -->
+      </div>
+      </div><!--/.card-->
+    </div><!--/.col-sm-6 -->
+    
+  </div>
+</div><!--/.container -->
+<!--############################################################################-->
+
+
+
+
+<!--
   <div class = "container">
     
-    <div class = "card card-lighter-gold margin-up">
-      <div class = "card-body">
-        {% if msg %}
-        <p class ="alert alert-light">{{ msg }}</p>
-        {% endif %}
-        
-        <h1>Upload </h1>
-        
-        <form method=post enctype=multipart/form-data onsubmit = 'quickAlert()'>
-          <p><input type=file name=file>
-              <input type=submit value=Upload>
-        </form>
-        <br><br>
+    <div class = "card card-light-blue margin-up">
 
-        <h3>Select your personal product type:</h3>
+      <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs" id="use-list" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" role="tab" aria-controls="check" aria-selected="true">Check safety</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  data-toggle="tab"  role="tab" aria-controls="recommend" aria-selected="false">Product recommendations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab"role="tab" aria-controls="learn" aria-selected="false">Learn more</a>
+          </li>
+        </ul>
+      </div>
 
-        <form id = "productType" onsubmit='getScore()'>
-        <input type="radio" id="shampoo" name="product" value="shampoo">
-        <label for="shampoo">Shampoo</label><br>
-        <input type="radio" id="conditioner" name="product" value="conditioner">
-        <label for="conditioner">Conditioner</label><br>
-        <input type="radio" id="foundation" name="product" value="foundation">
-        <label for="foundation">Foundation</label>
-        <br>
-        <input type="submit" name="mysubmit" value="Submit"/>
-        </form>
-        <script>
-           
-           function getScore(){
-                // Get the selected score (assuming one was selected)
-                var score = document.querySelector('input[name="product"]:checked').value;
-                alert(score + ' was selected!');
-            }
-            function quickAlert() {
-              alert('Upload successful...ingredients are processing!');
-            }
-        </script>
+      <div class = "card-body tab-content">
+        
+       
+        <div class="tab-pane show active" id="check" role="tabpanel">
+          <h1 class = "section-title">Upload </h1>
+          
+          <div class = "alert alert-light"><b>Instructions: Please upload a picture of the ingredients label from your personal product of choice. 
+            Images must be in JPG, JPEG, or PNG format.
+          </b></div>
+          <form method=post enctype=multipart/form-data onsubmit = 'quickAlert()'>
 
-        <h1>Result:</h1>
-        <!--
-        {% if img_src %}
-          <img src="{{ img_src }}">
-        {% endif %}-->
+            <label class="custom-file-upload">
+                  <input id = "actual-btn" type="file" name = "file">
+                  Custom Upload
+            </label>
+            
+            <span id="file-chosen">No file chosen</span>
+            <br><br>         
+            <input type="submit" value="Submit">
+          </form>
+          <script>
+            const actualBtn = document.getElementById('actual-btn');
+
+          const fileChosen = document.getElementById('file-chosen');
+
+          actualBtn.addEventListener('change', function(){
+            fileChosen.textContent = this.files[0].name
+          })
+          </script>
+          <br><br><hr>
+        </div>
         
-        {% if extracted_text %}
-          <p> The extracted text from the image above is: <b> {{ extracted_text }} </b></p>
+        <div class = "tab-pane" id = "recommend" role="tabpanel" aria-labelledby="recommend-tab">
+          <h1 class = "section-title">Result:</h1>
+          
+          
+          {% if extracted_text %}
+            <p> The extracted text from the image above is: <b> {{ extracted_text }} </b></p>
+          
+          {% else %}
+            Your results will be displayed here: 
+            
+          {% endif %}
+          <br><br>
+
+          <a href="../" class="btn btn-lg btn-dark">Return</a>
+          <br>
+          
+          {% if msg %}
+          <p class ="alert alert-light">{{ msg }}</p>
+          {% endif %}
         
-        {% else %}
-          The extracted text will be displayed here: 
-        {% endif %}
-        <br><br>
-        <a href="../" class="btn btn-lg btn-dark">Return</a>
+          <br><br><hr>
+        </div>
+        
+        <div class = "tab-pane" id = "learn" role="tabpanel" aria-labelledby="learn-tab">
+          <h1 class = "section-title">Product Recommendations</h1>
+
+          <form id = "productType" onsubmit='getScore()'>
+            <input type="radio" id="shampoo" name="product" value="shampoo">
+            <label for="shampoo">Shampoo</label><br>
+            <input type="radio" id="conditioner" name="product" value="conditioner">
+            <label for="conditioner">Conditioner</label><br>
+            <input type="radio" id="foundation" name="product" value="foundation">
+            <label for="foundation">Foundation</label>
+            <br><br>
+            <input type="submit" name="mysubmit" value="Submit"/>
+          </form>
+
+          <script>
+            function getScore(){
+                  // Get the selected score (assuming one was selected)
+                  var score = document.querySelector('input[name="product"]:checked').value;
+                  alert(score + ' was selected!');
+              }
+              function quickAlert() {
+                alert('Your upload was successful. Please be patient, results may take a few minutes to process!');
+              }
+          </script>
+        </div>
+        
       </div>
     </div>
   </div>
+
+-->
 
   <footer class="jumbotron footer-bs margin-up">
     <div class="container">

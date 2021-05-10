@@ -1,16 +1,2 @@
-INGREDIENTS:
-
-Water, Sodium Laureth Sulfate, Cocamidopropyl Betaine,
-Sodium Citrate, Sodium Xylenesulfonate, Sodium Lauryl
-Sulfate, Sodium Chloride, Cocamide Mea, Glycol Distearate,
-
-Fragrance, Glycerin, Stearyl Alcohol, Citric Acid, Sodium
-Benzoate, Cetyl Alcohol, Guar Hydroxypropyltrimonium
-Chloride, Tetrasodium Edta, Trisodium Ethylenediamine
-Disuccinate, Polyquaternium-6, Trihydroxystearin,
-
-Panthenol, Panthenyl Ethyl Ether, Methylchloroisothiazolinone,
-Methylisothiazolinone
-
- 
+Water, Sodium Laureth Sulfate, Cocamidopropyl Betaine.
 
