@@ -12,6 +12,9 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    
+    
     <!--Link to all fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Homemade+Apple&family=Lovers+Quarrel&family=Lato&family=Antic+Slab&family=Sacramento&family=Titillium+Web:wght@600&family=Crimson+Text&family=Poppins&family=Cedarville+Cursive&display=swap" rel="stylesheet">
@@ -200,9 +203,43 @@
   
  
   </div>
+<!--############################################################################-->
+  <script>
+    $(document).ready(function(){
 
 
+      if (location.hash) {
+        $('a[href=\'' + location.hash + '\']').tab('show');
+      }
+      var activeTab = localStorage.getItem('activeTab');
+      if (location.hash) {             
+        $('a[href=\'' + location.hash + '\']').tab('show');         
+      }         
+      else if (activeTab) {             
+        $('a[href="' + activeTab + '"]').tab('show');         
+      }
 
+      $('body').on('click', 'a[data-toggle=\'tab\']', function (e) {
+        e.preventDefault()
+        var tab_name = this.getAttribute('href')
+        if (history.pushState) {
+          history.pushState(null, null, tab_name)
+        }
+        else {
+          location.hash = tab_name
+        }
+        localStorage.setItem('activeTab', tab_name)
+
+        $(this).tab('show');
+        return false;
+      });
+      $(window).on('popstate', function () {
+        var anchor = location.hash ||
+          $('a[data-toggle=\'tab\']').first().attr('href');
+        $('a[href=\'' + anchor + '\']').tab('show');
+      });
+    });
+    </script>
 <!--############################################################################-->
 <div class="container">
   
@@ -211,7 +248,7 @@
      <div class="card" >
        <!-- navigation in .card-header -->
        <div class="card-header">
-         <ul class="nav nav-tabs card-header-tabs">
+         <ul class="nav nav-tabs card-header-tabs" id ="myTab">
            <li class="nav-item">
              <a class="nav-link active" data-toggle="tab" href="#tab1">Check Safety</a>
            </li>
@@ -223,6 +260,7 @@
            </li>
          </ul>
        </div>
+        
        <!-- .card-body.tab-content  -->
        <div class = "container">
         <div class="card-body tab-content">
@@ -245,15 +283,18 @@
               <input type="submit" value="Submit">
             </form>
 
+            <!----------SCRIPT BELOW HIDES UGLY PART OF UPLOAD BUTTON-->
             <script>
               const actualBtn = document.getElementById('actual-btn');
 
-            const fileChosen = document.getElementById('file-chosen');
+              const fileChosen = document.getElementById('file-chosen');
 
-            actualBtn.addEventListener('change', function(){
-              fileChosen.textContent = this.files[0].name
-            })
+              actualBtn.addEventListener('change', function(){
+                fileChosen.textContent = this.files[0].name
+              })
             </script>
+
+            <!---script below takes care of -->
             
             <br><hr>
             <h1 class = "section-title">Result:</h1>
@@ -282,33 +323,122 @@
           <!--############################################################################-->
           <h1 class = "section-title">Product Recommendations</h1>
 
-          <form id = "productType" onsubmit='getScore()'>
+          <form id = "productType" onsubmit="return false">
+            <p>Hair</p>
             <input type="radio" id="shampoo" name="product" value="shampoo">
             <label for="shampoo">Shampoo</label><br>
             <input type="radio" id="conditioner" name="product" value="conditioner">
             <label for="conditioner">Conditioner</label><br>
-            <input type="radio" id="foundation" name="product" value="foundation">
-            <label for="foundation">Foundation</label>
+            <hr>
+            <p>Cosmetics</p>
+            
+            <input type="radio" id="mascara" name="product" value="mascara">
+            <label for="mascara">Mascara</label>
+            <br>
+            <input type="radio" id="concealer" name="product" value="concealer">
+            <label for="concealer">Concealer</label>
+            <br>
+            <input type="radio" id="makeup-remover" name="product" value="makeup-remover">
+            <label for="makeup-remover">Makeup Remover</label>
+            
+            <hr>
+            <p>Personal Care</p>
+            <input type="radio" id="moisturizer" name="product" value="moisturizer">
+            <label for="moisturizer">Moisturizer</label>
+            <br>
+            <input type="radio" id="deodorant" name="product" value="deodorant">
+            <label for="deodorant">Deodorant</label>
+            <br>
+            <input type="radio" id="bodywash" name="product" value="bodywash">
+            <label for="bodywash">Body Wash</label>
+            <br>
+            <input type="radio" id="aftershave" name="product" value="aftershave">
+            <label for="aftershave">After Shave</label>
             <br><br>
-            <input type="submit" name="mysubmit" value="Submit"/>
+            <input type="submit" name="mysubmit" onclick = "getScore()" value="Submit"/>
           </form>
+          <br>
 
+         <h3>Your Recommendations:</h3>
+         <p id = "demo">Products will be listed here.</p>
           <script>
+            var items = [
+              //########## - Hair
+              //shampoo
+              ["Reverie Shampoo", "Rahua Hydration Shampoo", "Avalon Organics B-Complex Biotin Thickening Shampoo",
+              "100% Pure Kelp & Mint Volumizing Shampoo", "Adiva Naturals Apple Cider Vinegar Clarifying Herbal Rinse"],
+              //conditioner
+              ["Attitude Nourishing & Strengthening Conditioner", "Vanicream Free & Clear Conditioner For Sensitive Skin"
+              ,"Shea Moisture Yucca & Plantain Anti-Breakage Strengthening Conditioner", "Yarok Feed Your Ends Leave-In Conditioner"],
+              
+              //########## - Cosmetics 
+              //mascara
+              ["Ilia Limitless Lash Mascara", "Burt's Bees Nourishing Mascara", "Honest Beauty Extreme Length Mascara"],
+              //concealer
+              ["The Organic Skin Co - Hide and Seek Concealer", "RMS Beauty All Natural Foundation And Concealer", "Avril L’anti-Cernes Certifie Bio"],
+              //makeup remover
+              ["Cliganic USDA Organic Jojoba Oil", "Milk Makeup Vegan Milk Cleanser", "Viva Naturals Sweet Almond Oil"],
+
+              //########## - Personal Care
+              //moisturizer
+              ["Epara Moisturizing Face Cream", "ROSEN Tropics Moisturizer", "Weleda Skin Food Original Ultra-Rich Cream"],
+              //deodorant
+              ["Kosas Chemistry AHA Serum Deodorant", "Native Deodorant Eucalyptus", "Ursa Major Hoppin' Fresh Deodorant"],
+              //body wash
+              ["Dr. Bronner's Organic Sugar Soap", "Avalon Organics Revitalizing Peppermint Bath & Shower Gel", "Rahua Body Shower Gel"],
+              //after shave
+              ["Nivea Sensitive Post Shave Balm", "Jack Black Post Shave Cooling Gel", "The Art of Shaving After Shave Balm"],
+
+            ];   
+            $("#productType").submit(function(e) {
+                e.preventDefault();
+            });
             function getScore(){
-                  // Get the selected score (assuming one was selected)
-                  var score = document.querySelector('input[name="product"]:checked').value;
-                  alert(score + ' was selected!');
-              }
-              function quickAlert() {
-                alert('Your upload was successful. Please be patient, results may take a few minutes to process!');
-              }
-          </script>
+                // Get the selected score (assuming one was selected)
+                var score = document.querySelector('input[name="product"]:checked').value;
+                var list;
+                if (score == "shampoo") {
+                  list = 0;
+                } else if (score == "conditioner") {
+                  list = 1;
+                } else if (score == "mascara") {
+                  list = 2;
+                } else if (score == "concealer") {
+                  list = 3;
+                } else if (score == "moisturizer") {
+                  list = 4;
+                } else if (score == "deodorant") {
+                  list = 5;
+                } else if (score == "bodywash") {
+                  list = 6;
+                } else if (score == "aftershave") {
+                  list = 7;
+                }
+                printRecommendations(list);
+            }
+            function printRecommendations(list) {
+              document.getElementById("demo").innerHTML = 5;
+              var output = ""; 
+              var col;
+              for (var col = 0; col < items[list].length; col++)
+                output += items[list][col] + ' ~ ';
+              document.getElementById("demo").innerHTML = output;
+            }
+
+
+                       
+            function quickAlert() {
+              alert('Your upload was successful. Please be patient, results may take a few minutes to process!');
+            }
+        </script>
          </div>
 
          <div class="tab-pane fade" id="tab3">
-           <h4 class="card-title">Tab 3 Title</h4>
-           <p class="card-text">Never say Never. Dont't warry, be happy</p>
-           <a href="#" class="btn btn-success">Read More 3</a>
+           <h1>Interested in our process?</h1>
+           <p class="card-text">We classified our chemicals using a variety
+             of sources. 
+           </p>
+           <a href="#" class="btn btn-dark">Read More</a>
          </div>
         </div><!--/.card-body -->
       </div>

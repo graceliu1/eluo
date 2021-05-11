@@ -60,7 +60,7 @@ p {
     color: #265999;
     font-weight: bold;
 }
-.jumbotron .nav-link .active {
+.jumbotron .active {
     border-bottom: 3px solid white;
 }
 .jumbotron .nav-link:hover {
