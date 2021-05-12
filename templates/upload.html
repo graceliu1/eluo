@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
  <head>
-   <title>Upload Image</title>
+   <title>Use</title>
    <!--HEAD INFORMATION--------------------------------------------------------->
     <!--Favicon link-->
     <link rel="icon" href="static/Images/eluo-logo.png">
+    
     <!--Imported Bootstrap styles-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -12,8 +13,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
-    
     
     <!--Link to all fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
@@ -151,6 +150,12 @@
       .card-header {
         background-color:#4488BF ;
       }
+      label {
+        margin-right: 15px;
+      }
+      .card-pr {
+        border: 1px solid black;
+      }
       /*****************/
 
       /**CARD STYLES CSS**/
@@ -162,7 +167,7 @@
           .card-dark-blue { background-color: #265999; color: white;} /*ORANGE*/
 
       
-  </style> 
+    </style> 
  </head>
  <body>
    
@@ -184,7 +189,7 @@
               <a class="nav-link active" href="upload" >Use</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact Us</a>
+              <a class="nav-link" href="contact">Contact Us</a>
             </li>
 
           </ul>
@@ -323,44 +328,63 @@
           <!--############################################################################-->
           <h1 class = "section-title">Product Recommendations</h1>
 
+          <div class = "alert alert-dark"><b>Instructions:</b> <em>Eluo</em>'s recommendation service allows
+          users to select common personal care products and receive a list of all-natural substitutes. The products
+          below have been verified by our software.</div>
+
           <form id = "productType" onsubmit="return false">
-            <p>Hair</p>
-            <input type="radio" id="shampoo" name="product" value="shampoo">
-            <label for="shampoo">Shampoo</label><br>
-            <input type="radio" id="conditioner" name="product" value="conditioner">
-            <label for="conditioner">Conditioner</label><br>
-            <hr>
-            <p>Cosmetics</p>
-            
-            <input type="radio" id="mascara" name="product" value="mascara">
-            <label for="mascara">Mascara</label>
+             <!--CARD 1 - Hair-->
+            <div class = "card card-pr" ">
+              <div class = "card-body container">
+                <p><b>Hair</b></p>
+                <input type="radio" id="shampoo" name="product" value="shampoo">
+                <label for="shampoo">Shampoo</label>
+                <input type="radio" id="conditioner" name="product" value="conditioner">
+                <label for="conditioner">Conditioner</label>
+              </div>
+            </div>
             <br>
-            <input type="radio" id="concealer" name="product" value="concealer">
-            <label for="concealer">Concealer</label>
+             <!--CARD 2 - Cosmetics-->
+            <div class = "card card-pr">
+              <div class = "card-body container">
+                <p><b>Cosmetics</b></p>
+                
+                <input type="radio" id="mascara" name="product" value="mascara">
+                <label for="mascara">Mascara</label>
+                
+                <input type="radio" id="concealer" name="product" value="concealer">
+                <label for="concealer">Concealer</label>
+                
+                <input type="radio" id="makeup-remover" name="product" value="makeup-remover">
+                <label for="makeup-remover">Makeup Remover</label>
+              </div>
+            </div>
+
             <br>
-            <input type="radio" id="makeup-remover" name="product" value="makeup-remover">
-            <label for="makeup-remover">Makeup Remover</label>
-            
-            <hr>
-            <p>Personal Care</p>
-            <input type="radio" id="moisturizer" name="product" value="moisturizer">
-            <label for="moisturizer">Moisturizer</label>
-            <br>
-            <input type="radio" id="deodorant" name="product" value="deodorant">
-            <label for="deodorant">Deodorant</label>
-            <br>
-            <input type="radio" id="bodywash" name="product" value="bodywash">
-            <label for="bodywash">Body Wash</label>
-            <br>
-            <input type="radio" id="aftershave" name="product" value="aftershave">
-            <label for="aftershave">After Shave</label>
-            <br><br>
-            <input type="submit" name="mysubmit" onclick = "getScore()" value="Submit"/>
+            <!--CARD 3 - Personal Care-->
+            <div class = "card card-pr">
+              <div class = "container card-body">
+                <p><b>Personal Care</b></p>
+                <input type="radio" id="moisturizer" name="product" value="moisturizer">
+                <label for="moisturizer">Moisturizer</label>
+                
+                <input type="radio" id="deodorant" name="product" value="deodorant">
+                <label for="deodorant">Deodorant</label>
+                
+                <input type="radio" id="bodywash" name="product" value="bodywash">
+                <label for="bodywash">Body Wash</label>
+                
+                <input type="radio" id="aftershave" name="product" value="aftershave">
+                <label for="aftershave">After Shave</label>
+                <br><br>
+                <input type="submit" name="mysubmit" onclick = "getScore()" value="Submit"/>
+              </div>
+            </div>
           </form>
           <br>
 
          <h3>Your Recommendations:</h3>
-         <p id = "demo">Products will be listed here.</p>
+         <p id = "demo"><span style = "background-color : lightblue ">Products will be listed here.</span></p>
           <script>
             var items = [
               //########## - Hair

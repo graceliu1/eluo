@@ -22,6 +22,10 @@ def allowed_file(filename):
 def home_page():
     return render_template('index.html')
 
+@app.route('/contact')
+def contact_page():
+    return render_template('contact.html')
+
 # route and function to handle the upload page
 @app.route('/upload', methods=['GET', 'POST'])
 def upload_page():
