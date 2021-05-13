@@ -13,10 +13,8 @@ def ocr_core(filename):
     file = open("ingredients.txt","w")
     file.write(text)
     file.close()
-    os.chdir('../nlp')
     os.system('javac Finder.java')
-    os.system('java Finder')
-    os.chdir('../ocr_server') 
+    os.system('java Finder') 
     file = open("ingredients-bad.txt", "r")
     lines = file.readlines()
     if (len(lines) == 0):

@@ -9,7 +9,7 @@ public class Finder
         ArrayList<String> ingredients = r.correctIngredients();
         ArrayList<String> badIngredients = new ArrayList<>();
         try {
-            File textFile = new File("../nlp/chemicals-bad.txt");
+            File textFile = new File("chemicals-bad.txt");
             Scanner sc = new Scanner(textFile);
             while (sc.hasNextLine())
             {
@@ -30,10 +30,10 @@ public class Finder
             }
         }
         try {
-            PrintWriter writer = new PrintWriter(new FileWriter("../ocr_server/ingredients-bad.txt"));
+            PrintWriter writer = new PrintWriter(new FileWriter("ingredients-bad.txt"));
             writer.print("");
             writer.close();
-            BufferedWriter out = new BufferedWriter(new FileWriter("../ocr_server/ingredients-bad.txt", true));
+            BufferedWriter out = new BufferedWriter(new FileWriter("ingredients-bad.txt", true));
             for (String s : ingredientsFound)
             {
                 out.write(s);

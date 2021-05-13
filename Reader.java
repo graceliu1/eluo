@@ -54,7 +54,7 @@ public class Reader
         Reader r = new Reader();
         String ingredientsInitial = "";
         try {
-            File textFile = new File("../ocr_server/ingredients.txt");
+            File textFile = new File("ingredients.txt");
             Scanner sc = new Scanner(textFile);
             while(sc.hasNextLine())
             {
@@ -133,7 +133,7 @@ public class Reader
 
     public static String[] tokenize(String s) throws Exception
     {
-        InputStream input = new FileInputStream("../nlp/model/en-token.bin");
+        InputStream input = new FileInputStream("model/en-token.bin");
         TokenizerModel model = new TokenizerModel(input);
         TokenizerME tokenizer = new TokenizerME(model);
         String[] tokens = tokenizer.tokenize(s);
@@ -142,7 +142,7 @@ public class Reader
 
     public static String[] posTag(String[] tokens) throws Exception
     {       
-        InputStream input = new FileInputStream("../nlp/model/en-pos-maxent.bin"); 
+        InputStream input = new FileInputStream("model/en-pos-maxent.bin"); 
         POSModel model = new POSModel(input); 
         POSTaggerME tagger = new POSTaggerME(model); 
         String[] tags = tagger.tag(tokens);
@@ -151,7 +151,7 @@ public class Reader
 
     public static String[] lemmatize(String[] tokens, String[] posTags) throws Exception
     {
-        InputStream input = new FileInputStream("../nlp/model/en-lemmatizer.bin");
+        InputStream input = new FileInputStream("model/en-lemmatizer.bin");
         LemmatizerModel model = new LemmatizerModel(input);
         LemmatizerME categorizer = new LemmatizerME(model);
         String[] lemmaTokens = categorizer.lemmatize(tokens, posTags);    
