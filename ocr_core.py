@@ -1,3 +1,7 @@
+import os 
+os.system("brew install tesseract")
+os.system("pipenv shell")
+os.system("pipenv install pytesseract Pillow")
 try:
     from PIL import Image
 except ImportError:
