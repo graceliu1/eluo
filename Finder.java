@@ -9,7 +9,7 @@ public class Finder
         ArrayList<String> ingredients = r.correctIngredients();
         ArrayList<String> badIngredients = new ArrayList<>();
         try {
-            File textFile = new File("chemicals-bad.txt");
+            File textFile = new File("../nlp/chemicals-bad.txt");
             Scanner sc = new Scanner(textFile);
             while (sc.hasNextLine())
             {
@@ -21,14 +21,24 @@ public class Finder
             System.out.println("File not found.");
             e.printStackTrace();
         }
-        String finalWords = "";
-        for (String i : ingredients)
+        ArrayList<String> ingredientsFound = new ArrayList<>();
+        for (int i = 0; i < ingredients.size(); i++)
         {
-            if(badIngredients.contains(i)) finalWords += i + "\n";
+            if(badIngredients.contains(ingredients.get(i)))
+            {
+                ingredientsFound.add(ingredients.get(i));
+            }
         }
         try {
-            BufferedWriter out = new BufferedWriter(new FileWriter("ingredients-bad.txt"));
-            out.write(finalWords);
+            PrintWriter writer = new PrintWriter(new FileWriter("../ocr_server/ingredients-bad.txt"));
+            writer.print("");
+            writer.close();
+            BufferedWriter out = new BufferedWriter(new FileWriter("../ocr_server/ingredients-bad.txt", true));
+            for (String s : ingredientsFound)
+            {
+                out.write(s);
+                out.newLine();
+            }
             out.close();
         }
         catch (IOException e) {

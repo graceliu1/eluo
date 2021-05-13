@@ -52,13 +52,13 @@ public class Reader
 {
     public ArrayList<String> correctIngredients() throws Exception {
         Reader r = new Reader();
-        ArrayList<String> wordsInitial = new ArrayList<String>();
+        String ingredientsInitial = "";
         try {
-            File textFile = new File("ingredients.txt");
+            File textFile = new File("../ocr_server/ingredients.txt");
             Scanner sc = new Scanner(textFile);
-            while (sc.hasNextLine())
+            while(sc.hasNextLine())
             {
-                wordsInitial.add(sc.nextLine());
+                ingredientsInitial += sc.nextLine();
             }
             sc.close();
         }
@@ -66,36 +66,59 @@ public class Reader
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-        //System.out.print("Please enter the delimiter: ");
-        //Scanner sc = new Scanner(System.in);
-        //String delimiter = sc.nextLine();
-        String delimiter = ",";
-        //sc.close();
-        ArrayList<String> words = r.processInput(wordsInitial, delimiter);
-        ArrayList<String> wordsCorrected = new ArrayList<String>();
-        for (String w : words)
+        ArrayList<String> ingredients = r.processInput(ingredientsInitial);
+        ArrayList<String> ingredientsCorrected = new ArrayList<String>();
+        for (String i : ingredients)
         {
-            try {wordsCorrected.add(r.findCategory(w));}
+            try {ingredientsCorrected.add(r.findCategory(i));}
             catch (Exception e) {
                 System.out.println("Exception was thrown");
                 e.printStackTrace();
             }
         }
-        return wordsCorrected;
+        String ingredient;
+        for (int i = 0; i < ingredientsCorrected.size(); i++)
+        {
+            ingredient = ingredientsCorrected.get(i); 
+            while(ingredient.contains("-"))
+            {
+                ingredient = ingredient.substring(0, ingredient.indexOf("-")) + " " + ingredient.substring(ingredient.indexOf("-") + 1);
+            }
+            ingredientsCorrected.set(i,ingredient);
+        }
+        return ingredientsCorrected;
     }
 
-    private ArrayList<String> processInput(ArrayList<String> text, String d)
+    /*public static void main(String args[]) throws Exception
     {
-        ArrayList<String> words = new ArrayList<>(); 
-        for (String s : text)
+        Reader r = new Reader();
+        ArrayList<String> result = r.correctIngredients();
+        for (String s : result) System.out.println(s);
+    }*/
+    
+    private ArrayList<String> processInput(String ingredients)
+    {
+        ingredients = ingredients.toLowerCase();
+        ArrayList<String> words = new ArrayList<>();
+        String word = "";
+        while (ingredients.contains(","))
         {
-            while (s.contains(d))
+            word = ingredients.substring(0, ingredients.indexOf(","));
+            while (word.contains(" "))
             {
-                words.add(s.substring(0, s.indexOf(d)));
-                s = s.substring(s.indexOf(d) + 1);
+                if(word.indexOf(" ") == 0) word = word.substring(1);
+                else word = word.substring(0, word.indexOf(" ")) + "-" + word.substring(word.indexOf(" ") + 1);
             }
-            words.add(s);
+            words.add(word);
+            ingredients = ingredients.substring(ingredients.indexOf(",") + 1);
         }
+        word = ingredients;
+        while (word.contains(" "))
+        {
+            if(word.indexOf(" ") == 0) word = word.substring(1);
+            else word = word.substring(0, word.indexOf(" ")) + "-" + word.substring(word.indexOf(" ") + 1);
+        }
+        words.add(word);
         return words;
     }
 
@@ -108,18 +131,9 @@ public class Reader
         return categorize(model, lemmas);
     }
 
-    /*public static String[] detectSentences(String s) throws Exception
-    {   
-        InputStream input = new FileInputStream("/model/en-sent.bin");
-        SentenceModel model = new SentenceModel(input);
-        SentenceDetectorME detector = new SentenceDetectorME(model);
-        String sentences[] = detector.sentDetect(s);
-        return sentences;
-    }*/
-    
     public static String[] tokenize(String s) throws Exception
     {
-        InputStream input = new FileInputStream("model/en-token.bin");
+        InputStream input = new FileInputStream("../nlp/model/en-token.bin");
         TokenizerModel model = new TokenizerModel(input);
         TokenizerME tokenizer = new TokenizerME(model);
         String[] tokens = tokenizer.tokenize(s);
@@ -128,16 +142,16 @@ public class Reader
 
     public static String[] posTag(String[] tokens) throws Exception
     {       
-        InputStream input = new FileInputStream("model/en-pos-maxent.bin"); 
+        InputStream input = new FileInputStream("../nlp/model/en-pos-maxent.bin"); 
         POSModel model = new POSModel(input); 
         POSTaggerME tagger = new POSTaggerME(model); 
         String[] tags = tagger.tag(tokens);
-        return tags;  
+        return tags;
     }
 
     public static String[] lemmatize(String[] tokens, String[] posTags) throws Exception
     {
-        InputStream input = new FileInputStream("model/en-lemmatizer.bin");
+        InputStream input = new FileInputStream("../nlp/model/en-lemmatizer.bin");
         LemmatizerModel model = new LemmatizerModel(input);
         LemmatizerME categorizer = new LemmatizerME(model);
         String[] lemmaTokens = categorizer.lemmatize(tokens, posTags);    

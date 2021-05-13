@@ -1,2 +1,5 @@
-Water, Sodium Laureth Sulfate, Cocamidopropyl Betaine.
+Waterr, Sodium Laureth Sulfate, Cocamidopropyl Betaine,
+
+Sodium Citrate,
+formaldehyde
 
