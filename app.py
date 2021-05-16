@@ -45,7 +45,7 @@ def upload_page():
 
             # extract the text and display it
             return render_template('upload.html',
-                                   msg='Successfully processed',
+                                   msg='Successfully processed. ',
                                    extracted_text=extracted_text,
                                    img_src=UPLOAD_FOLDER + file.filename)
     elif request.method == 'GET':

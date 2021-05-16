@@ -25,133 +25,9 @@
         <link type="text/css"  href="static/main.css" rel="stylesheet">
         <style>
             /**JUMBOTRON AND GENERAL STYLING**/
-            .jumbotron-header {
-                background-image: linear-gradient(
-                rgba(0, 0, 0, 0),
-                rgba(0, 0, 0, 0)
-                ), url("static/Images/main_background.jpg");
             
-                min-height: 800px;
-      
-                background-position: left;
-               
-                
-            }
-            .j-title {
-                padding: 40px 30px 0 35px;
-                text-transform:uppercase;
-                font-family: 'Crimson Text', serif;
-                position: absolute;
-      
-                top: 230px;
-                left: 330px;
-      
-                height: 200px;
-                width: 300px;
-      
-                font-size: 80px;
-                z-index: 2;
-                background-color: white;
-                color: black;
-               
-            }
-            .j-text {
-                padding: 50px 30px 0 90px;
-                
-                position: absolute;
-      
-                top: 190px;
-                left: 560px;
-      
-                width: 450px;
-                height: 300px;
-      
-                
-                z-index: 1;
-                background-color: #265999;
-                color: white;
-            }
-            .j-text-info {
-                font-family: 'Homemade Apple', serif;
-                font-size:40px;
-            }
-            .j-text:hover {
-                transition: 0.5s;
-                background-color: black;
-                color: white;
-            }
-            .j-title:hover {
-                transition: 0.5s;
-                background-image: linear-gradient(
-                        rgba(0, 0, 0, 0),
-                        rgba(0, 0, 0, 0)
-                        ), url("static/Images/larger-logo.png");
-                background-size: 110%;
-                background-position: center;
-      
-      
-            }
-            .margin-up {
-                margin-top: 3px;
-            }
             .section-title {
                 margin-bottom: 20px;
-            }
-            .down-arrow {
-                position:relative;
-                top: 600px;
-            }
-            
-            input[type=submit] {
-              all: unset;
-              border: 2px solid black; 
-              padding: 5px 10px 5px 10px;
-              color: black;
-              background-color: rgb(255, 255, 255);
-            }
-      
-            input[type="file"] {
-                display: none;
-            }
-            .custom-file-upload {
-                all:unset;
-                border: 2px solid black; 
-                color: black;
-                background-color: rgb(231, 231, 231);
-                display: inline-block;
-      
-                padding: 5px 10px 5px 10px;
-                cursor: pointer;
-            }
-            #file-chosen{
-              margin-left: 0.3rem;
-              font-family: sans-serif;
-            }
-            .nav-item, .nav-item:hover {
-              border: 0;
-            }
-            .nav-tabs, .card-header-tabs {
-              border: 2px;
-              
-            }
-            .nav-tabs .active {
-              background-color: white !important;
-              border-color: black;
-            }
-            .nav-link {
-              color: black;
-            }
-            .nav-link:hover {
-              color: rgb(13, 12, 12);
-            }
-            .card-header {
-              background-color:#4488BF ;
-            }
-            label {
-              margin-right: 15px;
-            }
-            .card-pr {
-              border: 1px solid black;
             }
             /*****************/
       
@@ -162,7 +38,12 @@
                 .card-cream { background-color: #c3d8fb; color: black;} /*LIGHT GREEN */
                 .card-light-blue { background-color: #4488BF; color: white; } /*ORANGE*/
                 .card-dark-blue { background-color: #265999; color: white;} /*ORANGE*/
-      
+            .special-icon:hover, .special-icon {
+                color: black;
+            }
+            .j-title:hover {
+                background: white;
+            }
             
           </style> 
     </head>
@@ -197,11 +78,11 @@
           
         <!--BOX ON THE RIGHT OF JUMBOTRON-->
         <div class = "shadow-lg jumbotron-content j-text">
-            <span class = "j-text-info">contact us and reach out </span><br>
+            <span class = "j-text-info">contact us to reach out </span><br>
             <a href="../" style = "margin-top: 30px" class="btn btn-lg btn-outline-light">home</a>
         </div>
         <!--BOX ON THE LEFT OF JUMBOTRON-->
-        <div class = "shadow-lg jumbotron-content j-title"><a href="#" class="social-link"><i class="fas fa-envelope fa-lg"></i></a></div>
+        <div class = "shadow-lg jumbotron-content j-title"><a href="#" class="social-link special-icon"><i class="fas fa-envelope fa-lg"></i></a></div>
             
         <!--DOWN ARROW ON JUMBOTRON-->
         <img src = "static/Images/down-arrow.png" width = "40" class = "down-arrow img-fluid">
@@ -216,38 +97,36 @@
         <div class="container">
             <div class = "row">
             <div class="col-md-3 footer-nav">
-                <h4>Menu —</h4>
+                
                     <ul class="pages">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="">Home</a></li>
+                        <li><a href="upload">Use</a></li>
+                        <li><a href="contact">Contact Us</a></li>
                     </ul>
             </div>
-            <div class="col-md-5 footer-brand">
+            <div class="col-md-6 footer-brand">
             <a href="#"> <img id="logo" alt="Logo" src="static/Images/eluo-logo.png" width="60" height="60"> <span style ="max-width: 70%; font-family: 'Crimson Text', serif; font-size: 170%">Eluo</span> </a> 
             
                 <p>Eluo is an organization committed to helping consumers
-                    remain aware of what they're eating and the environmental impact
-                     of every bite. 
+                    remain aware  of the contents of their personal care products.
+                    All rights reserved. 
+                    <!--<h5><a style = "font-family: 'Lato'; text-decoration: none" href= "#">
+                        Copyright © 2021 by Eluo </a> </h5>-->
                 </p>
-                <p>Eluo, all rights reserved</p>
             </div>
             
-            <ul class="social list-inline col-md-3">
+            <div class = "col-md-2 row ">
+            <ul class="social list-inline">
                     
-                <li class="list-inline-item"><a href="mailto:dhsgirlsmatha@gmail.com" class="social-link"><i class="fas fa-envelope fa-2x"></i></a></li>
+                <li class="list-inline-item"><a href="mailto:liu0888@mydusd.com" class="social-link"><i class="fas fa-envelope fa-2x"></i></a></li>
                 <!--<li class="list-inline-item"><a href="https://www.instagram.com/dhs.girlsmathassociation/" class="social-link"><i class="fab fa-instagram fa-3x"></i></a></li>-->
-                <li class="list-inline-item"><a href="https://discord.com/invite/tzZBVA8y" class="social-link"><i class="fab fa-linkedin fa-2x"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="social-link"><i class="fas fa-share fa-2x"></i></a></li>
+               
                 <li class="list-inline-item"><a href="#" class="social-link"><i class="fas fa-share fa-2x"></i></a></li>
                 
             </ul>
-            
+            </div>
                    
             </div>
-            <div class = "text-center">
-                <h5><a style = "font-family: 'Crimson Text', serif; text-decoration: none" href= "#">
-                Copyright © 2021 by Eluo </a> </h5></div>
     </footer>
 
 </body>

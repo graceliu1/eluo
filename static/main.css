@@ -10,7 +10,7 @@ hr {
     border-top: 1px solid black;
 }
 p {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 .card, .img-thumbnail {
     border: 0;
@@ -41,6 +41,79 @@ p {
      background-size: cover;
 }
 
+/**JUMBOTRON AND GENERAL STYLING**/
+.jumbotron-header {
+    background-image: linear-gradient(
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0)
+    ), url("Images/main_background.jpg");
+
+    min-height: 800px;
+
+    background-position: left;
+   
+    
+}
+.j-title {
+    padding: 40px 30px 0 35px;
+    text-transform:uppercase;
+    font-family: 'Crimson Text', serif;
+    position: absolute;
+
+    top: 35%;/*230px;*/
+    left:  25%;/*330px;*/
+
+    height: 200px;
+    width: 300px;
+
+    font-size: 80px;
+    z-index: 2;
+    background-color: white;
+    color: black;
+   
+}
+.j-text {
+    padding: 50px 30px 0 90px;
+    
+    position: absolute;
+
+    top: 28%;/*190px;*/
+    left: 43.5%; /*560px;*/
+    width: 445px;
+    height: 300px;
+
+    
+    z-index: 1;
+    background-color: #265999;
+    color: white;
+}
+.j-text-info {
+    font-family: 'Homemade Apple', serif;
+    font-size:40px;
+}
+.j-text:hover {
+    transition: 0.5s;
+    background-color: black;
+    color: white;
+}
+.j-title:hover {
+    transition: 0.5s;
+    background-image: linear-gradient(
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0)
+            ), url("Images/larger-logo.png");
+    background-size: 110%;
+    background-position: center;
+
+
+}
+.margin-up {
+    margin-top: 3px;
+}
+.down-arrow {
+    position:relative;
+    top: 600px;
+}
 /******THIS IS  USED  FOR  FOOOOOOOOOOOOOTERRRRRRR*/
 .jumbotron {
     border-radius: 0 !important;
@@ -48,7 +121,7 @@ p {
     
 }
 .large-paragraph {
-    font-size: 130%;
+    font-size: 125%;
 }
 .img-thumbnail {
     background-color: #1F283D;

@@ -27,82 +27,9 @@
     
     <!----------------------------------------------------------->
     <style>
-      /**JUMBOTRON AND GENERAL STYLING**/
-      .jumbotron-header {
-          background-image: linear-gradient(
-          rgba(0, 0, 0, 0),
-          rgba(0, 0, 0, 0)
-          ), url("static/Images/main_background.jpg");
       
-          min-height: 800px;
-
-          background-position: left;
-         
-          
-      }
-      .j-title {
-          padding: 40px 30px 0 35px;
-          text-transform:uppercase;
-          font-family: 'Crimson Text', serif;
-          position: absolute;
-
-          top: 230px;
-          left: 330px;
-
-          height: 200px;
-          width: 300px;
-
-          font-size: 80px;
-          z-index: 2;
-          background-color: white;
-          color: black;
-         
-      }
-      .j-text {
-          padding: 50px 30px 0 90px;
-          
-          position: absolute;
-
-          top: 190px;
-          left: 560px;
-
-          width: 450px;
-          height: 300px;
-
-          
-          z-index: 1;
-          background-color: #265999;
-          color: white;
-      }
-      .j-text-info {
-          font-family: 'Homemade Apple', serif;
-          font-size:40px;
-      }
-      .j-text:hover {
-          transition: 0.5s;
-          background-color: black;
-          color: white;
-      }
-      .j-title:hover {
-          transition: 0.5s;
-          background-image: linear-gradient(
-                  rgba(0, 0, 0, 0),
-                  rgba(0, 0, 0, 0)
-                  ), url("static/Images/larger-logo.png");
-          background-size: 110%;
-          background-position: center;
-
-
-      }
-      .margin-up {
-          margin-top: 3px;
-      }
       .section-title {
           margin-bottom: 20px;
-      }
-      .down-arrow {
-          position:relative;
-          top: 600px;
       }
       
       input[type=submit] {
@@ -309,19 +236,21 @@
             {% endif %}-->
             
             {% if extracted_text %}
-              <p> The extracted text from the image above is: <b> {{ extracted_text }} </b></p>
+              <p> The result from the image above is: <b> {{ extracted_text }} </b></p>
             
             {% else %}
               Your results will be displayed here: 
               <!--The extracted text will be displayed here: -->
             {% endif %}
-            <br><br>
-
-            <a href="../" class="btn btn-lg btn-dark">Return</a>
-            <br><br>
+            <br>
             {% if msg %}
             <p class ="alert alert-success">{{ msg }}</p>
             {% endif %}
+            <br>
+
+            <a href="../" class="btn btn-lg btn-dark">Return</a>
+            <br><br>
+            
          </div>
 
          <div class="tab-pane fade" id="tab2">
@@ -582,42 +511,40 @@
 
 -->
 
-  <footer class="jumbotron footer-bs margin-up">
-    <div class="container">
-        <div class = "row">
-        <div class="col-md-3 footer-nav">
-            <h4>Menu —</h4>
-                <ul class="pages">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-        </div>
-        <div class="col-md-5 footer-brand">
-        <a href="#"> <img id="logo" alt="Logo" src="static/Images/eluo-logo.png" width="60" height="60"> <span style ="max-width: 70%; font-family: 'Crimson Text', serif; font-size: 170%">Eluo</span> </a> 
-        
-            <p>Eluo is an organization committed to helping consumers
-                remain aware of what they're eating and the environmental impact
-                 of every bite. 
-            </p>
-            <p>Eluo, all rights reserved</p>
-        </div>
-        
-        <ul class="social list-inline col-md-3">
-                
-            <li class="list-inline-item"><a href="mailto:dhsgirlsmatha@gmail.com" class="social-link"><i class="fas fa-envelope fa-2x"></i></a></li>
-            <!--<li class="list-inline-item"><a href="https://www.instagram.com/dhs.girlsmathassociation/" class="social-link"><i class="fab fa-instagram fa-3x"></i></a></li>-->
-            <li class="list-inline-item"><a href="https://discord.com/invite/tzZBVA8y" class="social-link"><i class="fab fa-linkedin fa-2x"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fas fa-share fa-2x"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fas fa-share fa-2x"></i></a></li>
-            
-        </ul>
-        
-               
-        </div>
-        <div class = "text-center">
-            <h5><a style = "font-family: 'Crimson Text', serif; text-decoration: none" href= "#">
-            Copyright © 2021 by Eluo </a> </h5></div>
+<footer class="jumbotron footer-bs margin-up">
+  <div class="container">
+      <div class = "row">
+      <div class="col-md-3 footer-nav">
+          
+              <ul class="pages">
+                  <li><a href="">Home</a></li>
+                  <li><a href="upload">Use</a></li>
+                  <li><a href="contact">Contact Us</a></li>
+              </ul>
+      </div>
+      <div class="col-md-6 footer-brand">
+      <a href="#"> <img id="logo" alt="Logo" src="static/Images/eluo-logo.png" width="60" height="60"> <span style ="max-width: 70%; font-family: 'Crimson Text', serif; font-size: 170%">Eluo</span> </a> 
+      
+          <p>Eluo is an organization committed to helping consumers
+              remain aware  of the contents of their personal care products.
+              All rights reserved. 
+              <!--<h5><a style = "font-family: 'Lato'; text-decoration: none" href= "#">
+                  Copyright © 2021 by Eluo </a> </h5>-->
+          </p>
+      </div>
+      
+      <div class = "col-md-2 row ">
+      <ul class="social list-inline">
+              
+          <li class="list-inline-item"><a href="mailto:liu0888@mydusd.com" class="social-link"><i class="fas fa-envelope fa-2x"></i></a></li>
+          <!--<li class="list-inline-item"><a href="https://www.instagram.com/dhs.girlsmathassociation/" class="social-link"><i class="fab fa-instagram fa-3x"></i></a></li>-->
+         
+          <li class="list-inline-item"><a href="#" class="social-link"><i class="fas fa-share fa-2x"></i></a></li>
+          
+      </ul>
+      </div>
+             
+      </div>
 </footer>
  </body>
 </html>

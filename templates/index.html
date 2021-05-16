@@ -17,7 +17,7 @@
 
     <!--Link to all fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Homemade+Apple&family=Lovers+Quarrel&family=Lato&family=Antic+Slab&family=Sacramento&family=Titillium+Web:wght@600&family=Crimson+Text&family=Poppins&family=Cedarville+Cursive&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=IBM+Plex+Sans:wght@500&family=Roboto&family=Homemade+Apple&family=Lovers+Quarrel&family=Lato&family=Antic+Slab&family=Sacramento&family=Titillium+Web:wght@600&family=Crimson+Text&family=Poppins&family=Cedarville+Cursive&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Barlow&display=swap" rel="stylesheet">
 
     <!--Icons-->
@@ -28,107 +28,7 @@
     
     <!----------------------------------------------------------->
     <style>
-        /**JUMBOTRON AND GENERAL STYLING**/
-        .jumbotron-header {
-            background-image: linear-gradient(
-            rgba(0, 0, 0, 0),
-            rgba(0, 0, 0, 0)
-            ), url("static/Images/main_background.jpg");
         
-            min-height: 800px;
-
-            background-position: left;
-           
-            
-        }
-        .j-title {
-            padding: 40px 30px 0 35px;
-            text-transform:uppercase;
-            font-family: 'Crimson Text', serif;
-            position: absolute;
-
-            top: 230px;
-            left: 330px;
-
-            height: 200px;
-            width: 300px;
-
-            font-size: 80px;
-            z-index: 2;
-            background-color: white;
-            color: black;
-           
-        }
-        .j-text {
-            padding: 50px 30px 0 90px;
-            
-            position: absolute;
-
-            top: 190px;
-            left: 560px;
-
-            width: 450px;
-            height: 300px;
-
-            
-            z-index: 1;
-            background-color: #265999;
-            color: white;
-        }
-        .j-text-info {
-            font-family: 'Homemade Apple', serif;
-            font-size:40px;
-        }
-        .j-text:hover {
-            transition: 0.5s;
-            background-color: black;
-            color: white;
-        }
-        .j-title:hover {
-            transition: 0.5s;
-            background-image: linear-gradient(
-                    rgba(0, 0, 0, 0),
-                    rgba(0, 0, 0, 0)
-                    ), url("static/Images/larger-logo.png");
-            background-size: 110%;
-            background-position: center;
-
-
-        }
-        .margin-up {
-            margin-top: 3px;
-        }
-
-
-        /*
-        .image-card {
-            border-radius: 30px;
-            min-height: 600px;
-            background-image: linear-gradient(
-                    rgba(0, 0, 0, 0),
-                    rgba(0, 0, 0, 0)
-                    ), url("static/Images/blue-powder.jpg");
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-          
-            background-size: cover;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-        .overlay-content {
-            background-color: #F4F2C9;
-            color: black;
-            
-            max-width: 50%;
-            padding: 0 25px 0 20px;
-            
-        }*/
-        .down-arrow {
-            position:relative;
-            top: 600px;
-        }
         /**For FAQ Section */
         button {
             all: unset;
@@ -141,7 +41,7 @@
             .card-light-gold { background-color: #D5AD36; color: white; } 
             .card-cream { background-color: #F4F2C9; color: black;} /*LIGHT GREEN */
             .card-light-blue { background-color: #4488BF; color: white; } /*ORANGE*/
-            .card-dark-blue { background-color: #265999; color: white;} /*ORANGE*/
+            .card-dark-blue { background-color: #265999; color: black;} /*ORANGE*/
 
         
     </style> 
@@ -187,7 +87,7 @@
 
         <div class = "shadow-lg jumbotron-content j-text">
             <span class = "j-text-info">redefining personal care </span>
-            <a href="#" style = "margin-top: 30px" class="btn btn-lg btn-outline-light">Learn More</a>
+            <a href="upload" style = "margin-top: 30px" class="btn btn-lg btn-outline-light">Learn More</a>
         </div>
             <div class = "shadow-lg jumbotron-content j-title">Eluo</div>
             
@@ -207,10 +107,11 @@
                     <div class = "card-title">
                         the problem
                     </div>
-                    <p class = "large-paragraph"> The average woman in the US is exposed to 168 chemicals every day. 
+                    <p class = "large-paragraph"> The average woman in the US is exposed to <b>168 unique chemicals</b> every day
+                         from personal care products alone.
                     </p>
                     <p class = "large-paragraph">
-                       Personal care products are largely an unregulated industry. Many of the harmful chemicals
+                       Still, personal care products are largely an <b>unregulated</b> industry. Many of the harmful chemicals
                        present in these products have not been tested for long-term effects on the human body.</p>
                     <p class = "large-paragraph">
                         Using unsafe shampoo, conditioner, and comestic products is dangerous. It's also difficult 
@@ -218,13 +119,12 @@
                         <em>Eluo</em>.
                     </p>
                     <p class = "large-paragraph">
-                        Users can easily upload pictures of the ingredients from the 
-                        back . Our system uses image to text OCR to 
+                        Users can easily upload pictures of the ingredients label. Our system uses image to text OCR to 
                         check whether the chemicals are safe for use. We also provide recommendations 
                         for safer alternatives. 
                     </p>
                     
-                    <a href="math_selection_action_page.php" class="btn btn-lg btn-outline-light">Learn More</a>
+                    <a href="upload" class="btn btn-lg btn-outline-light">Use Eluo</a>
                 </div>
             </div>
         </div>
@@ -242,14 +142,16 @@
             </div>
             
             <p class = "large-paragraph"> 
-            Our web application uses OCR to identify ingredients from product labels. Then, chemicals are matched
-            with our database  to check whether they are safe for long-term use. 
+            Our web application accurately identifies ingredients from product labels. Then, chemicals are matched
+            with our database and processed with a <b>custom-trained NLP model</b>  to check whether they are safe for long-term use. 
             </p>
             <p class = "large-paragraph">
-            Users also receive results of their 
+            Users recieve notifications of their product safety status. Afterwards, they can receive custom
+            recommendations for a variety of personal products like shampoo, conditioner, foundation, mascara, and more.
             </p>
             <p class = "large-paragraph"> 
-            We will create a physical prototype of a scanner device that could be used in commercial centers to scan products while shopping. 
+            We've also created a model of a physical scanner prototype to be used in commercial centers. Users can scan 
+            labels and upload pictures on their phone to this web application. 
 
             </p>
             
@@ -260,7 +162,7 @@
     
     <div  class = "margin-up card-group">
         
-        <div  class = "card" style = "color: white">
+        <div  class = "card" style = "color: black">
             <img class = "img-fluid" style ="border-right: 3px solid white;" src ="static/Images/blue-powder-2.jpg">
         </div>
         <div   data-aos="fade-in" data-aos-duration="1200"  class = "card container card-cream" > 
@@ -268,28 +170,29 @@
             <div class = "">
                 <div class = "card-body">
                     <div class = "card-title">
-                        the problem
+                        the details
                     </div>
-                    <p class = "large-paragraph"> We are what we eat. </p>
+                    <p class = "large-paragraph"> Web development: HTML, CSS, Bootstrap, Javascript </p>
                         <!--Enter your grade and the math courses you have taken so far. The planned courses section is 
                         optional. After you click submit, a possible course pathway will be generated for you based on your input. 
                         
                         You must click "Reset" if you want to change any options.--> 
-                    <p class = "large-paragraph">But do you know the true impact of every bite?
+                    <p class = "large-paragraph">Image-to-text processing: OCR, Tesseract OCR, PyTesseract, Python
                     </p>
-                    <p class = "large-paragraph"> According to a report on the environmental impacts of food production, 
-                        26% of global greenhouse gas emissions are caused by food. 
-                    
+                    <p class = "large-paragraph">Text processing: Natural language processing (NLP models), Java
                     </p>
                     <p class = "large-paragraph">At <em>Eluo</em>, we're committed to helping our users 
-                        remain aware of what they're eating and the <b>environmental impact of every bite</b>. Our 
-                        application allows users to instantly check the environmental cost of food items.
-                        To read more about our mission and how we're increasing sustainability, scroll down below.
+                        remain aware  of the contents of their personal care products. Our goal is to <b>ensure that
+                             their products are 100% danger-free. </b>
+                    </p>
+                    <p class = "large-paragraph">
+                      Interested in contacting us? Visit our <em>Contact Us</em> page to get in touch.
                     </p>
                     <br>
-                    <a href="math_selection_action_page.php" class="btn btn-lg btn-outline-dark">Learn More</a>
+                    <a href="contact" class="btn btn-lg btn-outline-dark">Reach Out</a>
                 </div>
             </div>
+            
         </div>
     </div>
     
@@ -299,18 +202,18 @@
         <div  data-aos="fade-in" data-aos-duration="1200" class = "card container card-dark-blue"> 
             
             <div class = "card-body">
-                <div class = "card-title">
+                <div class = "card-title" style = "color: white">
                     common QUESTIONS
                 </div>
                 <div class="accordion" id="accordion-tab-1">
-                    <div class="card bg-light">
+                    <div class="card">
                         <div class="card-header" id="accordion-tab-1-heading-1">
                             <button class="btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-1" aria-expanded="false" aria-controls="accordion-tab-1-content-1">
-                                Q: What are the criteria for the food based on? </button>
+                                Q: What are the criteria for dangerous chemicals based on? </button>
                         </div>
                         <div class="collapse" id="accordion-tab-1-content-1" aria-labelledby="accordion-tab-1-heading-1" data-parent="#accordion-tab-1">
                             <div class="card-body">
-                                <p>We've used multiple reports from organizations like the Barilla Center for Food and Education.
+                                <p>We've used multiple reports from certified organizations like the Environmental Working Group.
                                 </p>
                             </div>
                         </div>
@@ -322,7 +225,7 @@
                         </div>
                         <div class="collapse" id="accordion-tab-1-content-2" aria-labelledby="accordion-tab-1-heading-2" data-parent="#accordion-tab-1">
                             <div class="card-body">
-                            <p>Separately, "In Victus" means "In Food" in Latin. But put together, Eluo means Invincible. </p>
+                            <p>In Latin, <em>eluo</em> means wash or clean. We hope our product cleanses harmful chemicals from personal care items! </p>
                             </div>
                         </div>
                     </div>
@@ -335,8 +238,7 @@
                         </div>
                         <div class="collapse" id="accordion-tab-1-content-3" aria-labelledby="accordion-tab-1-heading-3" data-parent="#accordion-tab-1">
                             <div class="card-body">
-                                <p>Feel free to download the source code at our Github repository. The READ.ME file has 
-                                more information.</p>
+                                <p>We've used Tesseract OCR by Google. Check out the "Use" section of our website to test it out.</p>
                             </div>
                         </div>
                     </div>
@@ -367,13 +269,54 @@
                             </div>
                         </div>
                     </div>
+                    <div class="card">
+                        <div class="card-header" id="accordion-tab-1-heading-6">
+                            
+                                <button class="btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-6" aria-expanded="false" aria-controls="accordion-tab-1-content-5">
+                                    Q: Where can I test it out? </button>
+                           
+                        </div>
+                        <div class="collapse" id="accordion-tab-1-content-6" aria-labelledby="accordion-tab-1-heading-6" data-parent="#accordion-tab-1">
+                            <div class="card-body">
+                                <p>Visit the <em>Use</em> tab of our website, which you can find in the navigation bar above.
+                                Then, navigate to the tab titled "Check Safety" and follow the instructions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="accordion-tab-1-heading-7">
+                            
+                                <button class="btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-7" aria-expanded="false" aria-controls="accordion-tab-1-content-5">
+                                    Q: Where can I get recommendations for better products? </button>
+                           
+                        </div>
+                        <div class="collapse" id="accordion-tab-1-content-7" aria-labelledby="accordion-tab-1-heading-7" data-parent="#accordion-tab-1">
+                            <div class="card-body">
+                                <p>Visit the <em>Use</em> tab of our website, which you can find in the navigation bar above.
+                                Then, navigate to the tab titled "Product Recommendations" and follow the instructions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="accordion-tab-1-heading-8">
+                            
+                                <button class="btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-8" aria-expanded="false" aria-controls="accordion-tab-1-content-5">
+                                    Q: How did you build Eluo? </button>
+                           
+                        </div>
+                        <div class="collapse" id="accordion-tab-1-content-8" aria-labelledby="accordion-tab-1-heading-8" data-parent="#accordion-tab-1">
+                            <div class="card-body">
+                                <p>The quick list of languages/APIs/frameworks used: HTML, CSS, Bootstrap, Javascript, OCR, Python, Java, NLP. </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     
         
-        <div class = "card" style = "color: white">
-            <img class = "img-fluid" style ="border-left: 3px solid white;" src ="static/Images/blue-skincare.jpg">
+        <div class = "card" style = "color: rgb(104, 92, 92)">
+            <img class = "img-fluid" style ="border-left: 3px solid white;"  src ="static/Images/blue-skincare.jpg">
         </div>
     </div>
     
@@ -387,38 +330,36 @@
         <div class="container">
             <div class = "row">
             <div class="col-md-3 footer-nav">
-                <h4>Menu —</h4>
+                
                     <ul class="pages">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="">Home</a></li>
+                        <li><a href="upload">Use</a></li>
+                        <li><a href="contact">Contact Us</a></li>
                     </ul>
             </div>
-            <div class="col-md-5 footer-brand">
+            <div class="col-md-6 footer-brand">
             <a href="#"> <img id="logo" alt="Logo" src="static/Images/eluo-logo.png" width="60" height="60"> <span style ="max-width: 70%; font-family: 'Crimson Text', serif; font-size: 170%">Eluo</span> </a> 
             
                 <p>Eluo is an organization committed to helping consumers
-                    remain aware of what they're eating and the environmental impact
-                     of every bite. 
+                    remain aware  of the contents of their personal care products.
+                    All rights reserved. 
+                    <!--<h5><a style = "font-family: 'Lato'; text-decoration: none" href= "#">
+                        Copyright © 2021 by Eluo </a> </h5>-->
                 </p>
-                <p>Eluo, all rights reserved</p>
             </div>
             
-            <ul class="social list-inline col-md-3">
+            <div class = "col-md-2 row ">
+            <ul class="social list-inline">
                     
-                <li class="list-inline-item"><a href="mailto:dhsgirlsmatha@gmail.com" class="social-link"><i class="fas fa-envelope fa-2x"></i></a></li>
+                <li class="list-inline-item"><a href="mailto:liu0888@mydusd.com" class="social-link"><i class="fas fa-envelope fa-2x"></i></a></li>
                 <!--<li class="list-inline-item"><a href="https://www.instagram.com/dhs.girlsmathassociation/" class="social-link"><i class="fab fa-instagram fa-3x"></i></a></li>-->
-                <li class="list-inline-item"><a href="https://discord.com/invite/tzZBVA8y" class="social-link"><i class="fab fa-linkedin fa-2x"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="social-link"><i class="fas fa-share fa-2x"></i></a></li>
+               
                 <li class="list-inline-item"><a href="#" class="social-link"><i class="fas fa-share fa-2x"></i></a></li>
                 
             </ul>
-            
+            </div>
                    
             </div>
-            <div class = "text-center">
-                <h5><a style = "font-family: 'Crimson Text', serif; text-decoration: none" href= "#">
-                Copyright © 2021 by Eluo </a> </h5></div>
     </footer>
 
     <!-- OLD FOOTER
